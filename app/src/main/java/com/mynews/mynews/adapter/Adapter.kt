@@ -12,11 +12,11 @@ import com.mynews.mynews.R
 import com.mynews.mynews.model.NewsItem
 import com.squareup.picasso.Picasso
 
-class Adapter (private val context: Context): RecyclerView.Adapter<Adapter.ItemViewHolder>(){
+class Adapter(private val context: Context) : RecyclerView.Adapter<Adapter.ItemViewHolder>() {
 
-    var newsList: List<NewsItem?> = mutableListOf<com.mynews.mynews.model.NewsItem>()
+    var newsList: List<NewsItem?> = mutableListOf<NewsItem>()
 
-    class ItemViewHolder(private val view: View): RecyclerView.ViewHolder(view){
+    class ItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
         val card: CardView = view.findViewById(R.id.card_contents)
         val image: ImageView = view.findViewById(R.id.news_image)
         val location: TextView = view.findViewById(R.id.location)
@@ -32,7 +32,7 @@ class Adapter (private val context: Context): RecyclerView.Adapter<Adapter.ItemV
     }
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
-    val newsInPosition = newsList[position]
+        val newsInPosition = newsList[position]
         val newsImageUrl = newsInPosition?.newsImage
 
         //Image holder
@@ -44,7 +44,7 @@ class Adapter (private val context: Context): RecyclerView.Adapter<Adapter.ItemV
         //location holder
         holder.location.text = newsInPosition?.newsLocation
 
-            //date holder
+        //date holder
         holder.date.text = newsInPosition?.newsDate
 
         //caption holder
