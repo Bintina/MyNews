@@ -6,6 +6,7 @@ import androidx.lifecycle.lifecycleScope
 import com.mynews.mynews.adapter.Adapter
 import com.mynews.mynews.api.ApiClient
 import com.mynews.mynews.api.ApiService
+import com.mynews.mynews.utils.Constants.API_KEY
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -17,7 +18,7 @@ object Datasource {
 
         activity.lifecycleScope.launch(Dispatchers.IO) {
             val response = try {
-                apiCall.getNews()
+                apiCall.getNews(API_KEY)
             } catch (e: Exception) {
                 Log.e("NewsDatasource", e.message.toString())
                 null

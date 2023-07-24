@@ -6,7 +6,7 @@ object Constants {
     val BASE_URL = "https://api.nytimes.com/svc/topstories/v2/"
 
     //End Url
-    const val END_URL = "world.json?"
+    const val END_URL = "world.json?/"
 
     //unattached key
     const val API_KEY = "api-key=zISBuhDClXAT0G1Lpmz0YnbaGfhPkGqf"
