@@ -1,5 +1,6 @@
 package com.mynews.mynews.controller
 
+import android.content.Intent
 import android.graphics.Movie
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -29,5 +30,11 @@ class MainActivity : AppCompatActivity() {
         recyclerView.adapter = adapter
     }
 
+    private fun openPopular() {
+        val intent = Intent(this, PopularNewsActivity::class.java)
+
+        startActivity(intent)
+
+    }
 
 }

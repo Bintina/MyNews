@@ -1,53 +1,54 @@
 package com.mynews.mynews.model
 
 
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
+import com.google.gson.annotations.SerializedName
 
-@Serializable
+
+
+
 data class PopularResult(
-    @SerialName("abstract")
+    @SerializedName("abstract")
     val popularAbstract: String?,
-    @SerialName("adx_keywords")
+    @SerializedName("adx_keywords")
     val popularAdxKeywords: String?,
-    @SerialName("asset_id")
+    @SerializedName("asset_id")
     val popularAssetId: Long?,
-    @SerialName("byline")
+    @SerializedName("byline")
     val popularByline: String?,
-    @SerialName("column")
-    val popularColumn: PopularAny?,
-    @SerialName("des_facet")
+    @SerializedName("column")
+    val popularColumn: Any?,
+    @SerializedName("des_facet")
     val popularDesFacet: List<String?>?,
-    @SerialName("eta_id")
+    @SerializedName("eta_id")
     val popularEtaId: Int?,
-    @SerialName("geo_facet")
+    @SerializedName("geo_facet")
     val popularGeoFacet: List<String?>?,
-    @SerialName("id")
+    @SerializedName("id")
     val popularId: Long?,
-    @SerialName("media")
+    @SerializedName("media")
     val popularMedia: List<PopularMedia?>?,
-    @SerialName("nytdsection")
+    @SerializedName("nytdsection")
     val popularNytdsection: String?,
-    @SerialName("org_facet")
+    @SerializedName("org_facet")
     val popularOrgFacet: List<String?>?,
-    @SerialName("per_facet")
+    @SerializedName("per_facet")
     val popularPerFacet: List<String?>?,
-    @SerialName("published_date")
+    @SerializedName("published_date")
     val popularPublishedDate: String?,
-    @SerialName("section")
+    @SerializedName("section")
     val popularSection: String?,
-    @SerialName("source")
+    @SerializedName("source")
     val popularSource: String?,
-    @SerialName("subsection")
+    @SerializedName("subsection")
     val popularSubsection: String?,
-    @SerialName("title")
+    @SerializedName("title")
     val popularTitle: String?,
-    @SerialName("type")
+    @SerializedName("type")
     val popularType: String?,
-    @SerialName("updated")
+    @SerializedName("updated")
     val popularUpdated: String?,
-    @SerialName("uri")
+    @SerializedName("uri")
     val popularUri: String?,
-    @SerialName("url")
+    @SerializedName("url")
     val popularUrl: String?
 )

@@ -1,21 +1,22 @@
 package com.mynews.mynews.model
 
 
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
 
-@Serializable
+import com.google.gson.annotations.SerializedName
+
+
+
 data class PopularMedia(
-    @SerialName("approved_for_syndication")
+    @SerializedName("approved_for_syndication")
     val popularApprovedForSyndication: Int?,
-    @SerialName("caption")
+    @SerializedName("caption")
     val popularCaption: String?,
-    @SerialName("copyright")
+    @SerializedName("copyright")
     val popularCopyright: String?,
-    @SerialName("media-metadata")
+    @SerializedName("media-metadata")
     val popularMediaMetadata: List<PopularMediaMetadata?>?,
-    @SerialName("subtype")
+    @SerializedName("subtype")
     val popularSubtype: String?,
-    @SerialName("type")
+    @SerializedName("type")
     val popularType: String?
 )

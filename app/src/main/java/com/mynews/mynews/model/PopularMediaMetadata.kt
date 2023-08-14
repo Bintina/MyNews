@@ -1,17 +1,15 @@
 package com.mynews.mynews.model
 
 
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
+import com.google.gson.annotations.SerializedName
 
-@Serializable
 data class PopularMediaMetadata(
-    @SerialName("format")
+    @SerializedName("format")
     val popularFormat: String?,
-    @SerialName("height")
+    @SerializedName("height")
     val popularHeight: Int?,
-    @SerialName("url")
+    @SerializedName("url")
     val popularUrl: String?,
-    @SerialName("width")
+    @SerializedName("width")
     val popularWidth: Int?
 )
