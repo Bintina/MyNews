@@ -22,12 +22,13 @@ object Datasource {
                 Log.e("NewsDatasource", e.message.toString())
                 null
             }
-            response?.let {
-                withContext(Dispatchers.Main) {
-                    adapter.newsList = it.items
+            response?.results?.let {
+                withContext(Dispatchers.Main){
+                adapter.newsList = it
                     adapter.notifyDataSetChanged()
                 }
             }
+
         }
 
     }

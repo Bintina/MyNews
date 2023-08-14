@@ -1,11 +1,13 @@
 package com.mynews.mynews.controller
 
+import android.graphics.Movie
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.RecyclerView
 import com.mynews.mynews.R
 import com.mynews.mynews.adapter.Adapter
 import com.mynews.mynews.data.Datasource
+import com.mynews.mynews.model.NewsItem
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,4 +28,6 @@ class MainActivity : AppCompatActivity() {
         recyclerView = findViewById(R.id.recycler_view)
         recyclerView.adapter = adapter
     }
+
+
 }

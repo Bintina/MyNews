@@ -9,12 +9,14 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.mynews.mynews.R
+import com.mynews.mynews.model.Multimedia
 import com.mynews.mynews.model.NewsItem
+import com.mynews.mynews.model.NewsItems
 import com.squareup.picasso.Picasso
 
 class Adapter(private val context: Context) : RecyclerView.Adapter<Adapter.ItemViewHolder>() {
+     var newsList: List<NewsItem?> = mutableListOf()
 
-    var newsList: List<NewsItem?> = mutableListOf<NewsItem>()
 
     class ItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
         val card: CardView = view.findViewById(R.id.card_contents)
@@ -33,7 +35,7 @@ class Adapter(private val context: Context) : RecyclerView.Adapter<Adapter.ItemV
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val newsInPosition = newsList[position]
-        val newsImageUrl = newsInPosition?.newsImage
+        val newsImageUrl = newsInPosition?.multimedia?.first()?.url
 
         //Image holder
         Picasso.with(context)
@@ -42,13 +44,13 @@ class Adapter(private val context: Context) : RecyclerView.Adapter<Adapter.ItemV
             .into(holder.image)
 
         //location holder
-        holder.location.text = newsInPosition?.newsLocation
+        holder.location.text = newsInPosition?.subsection
 
         //date holder
-        holder.date.text = newsInPosition?.newsDate
+        holder.date.text = newsInPosition?.createdDate
 
         //caption holder
-        holder.caption.text = newsInPosition?.newsCaption
+        holder.caption.text = newsInPosition?.title
 
         //holder.caption?.text =
     }
