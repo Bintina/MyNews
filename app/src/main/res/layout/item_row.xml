@@ -28,12 +28,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:adjustViewBounds="true"
                 android:maxWidth="100dp"
                 android:maxHeight="100dp"
                 android:minWidth="100dp"
                 android:minHeight="100dp"
                 android:padding="10dp"
-                android:adjustViewBounds="true"
                 android:scaleType="fitXY"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/caption"
@@ -86,6 +86,13 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/news_image"
                     app:layout_constraintTop_toBottomOf="@id/location" />
+
+                <TextView
+                    android:id="@+id/popular_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/cardview_dark_background"
+                    android:text="@string/popular_news" />
 
             </LinearLayout>
         </LinearLayout>
