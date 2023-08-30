@@ -1,57 +1,42 @@
 package com.mynews.mynews.adapter
 
-import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
-import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.mynews.mynews.R
-import com.mynews.mynews.model.NewsItem
+import com.mynews.mynews.databinding.ItemRowBinding
+import com.mynews.mynews.model.News
 import com.squareup.picasso.Picasso
 
-class Adapter(private val context: Context) : RecyclerView.Adapter<Adapter.ItemViewHolder>() {
+class Adapter() : RecyclerView.Adapter<Adapter.ItemViewHolder>() {
 
-    var newsList: List<NewsItem?> = mutableListOf<NewsItem>()
-
-    class ItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
-        val card: CardView = view.findViewById(R.id.card_contents)
-        val image: ImageView = view.findViewById(R.id.news_image)
-        val location: TextView = view.findViewById(R.id.location)
-        val date: TextView = view.findViewById(R.id.date)
-        val caption: TextView = view.findViewById(R.id.caption)
-
-    }
+    var newsList: List<News?> = mutableListOf<News>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
-        val adapterLayout = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_row, parent, false)
-        return ItemViewHolder(adapterLayout)
+        val binding = ItemRowBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return ItemViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
-        val newsInPosition = newsList[position]
-        val newsImageUrl = newsInPosition?.newsImage
-
-        //Image holder
-        Picasso.with(context)
-            .load(newsImageUrl)
-            .placeholder(R.drawable.ic_android_black_24dp)
-            .into(holder.image)
-
-        //location holder
-        holder.location.text = newsInPosition?.newsLocation
-
-        //date holder
-        holder.date.text = newsInPosition?.newsDate
-
-        //caption holder
-        holder.caption.text = newsInPosition?.newsCaption
-
-        //holder.caption?.text =
+        holder.bind(newsList[position])
     }
 
     override fun getItemCount(): Int = newsList.size
+
+    class ItemViewHolder(private val view: ItemRowBinding) : RecyclerView.ViewHolder(view.root) {
+        fun bind(news: News?) {
+
+            Picasso.with(view.newsImage.context)
+                .load(news?.multimedia?.firstOrNull()?.url)
+                .placeholder(R.drawable.ic_android_black_24dp)
+                .into(view.newsImage)
+
+            //date holder
+            view.date.text = news?.createdDate
+
+            //caption holder
+            view.caption.text = news?.abstract
+        }
+
+    }
 }

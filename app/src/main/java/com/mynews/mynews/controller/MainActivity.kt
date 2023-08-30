@@ -1,29 +1,34 @@
 package com.mynews.mynews.controller
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
-import com.mynews.mynews.R
 import com.mynews.mynews.adapter.Adapter
 import com.mynews.mynews.data.Datasource
+import com.mynews.mynews.databinding.ActivityMainBinding
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var recyclerView: RecyclerView
-    lateinit var adapter: Adapter
+    private lateinit var binding: ActivityMainBinding
+    private lateinit var adapter: Adapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         initialiseList()
 
-        Datasource.loadNews(this, adapter)
+        lifecycleScope.launch(Dispatchers.IO) {
+            Datasource.loadNews(adapter)
+        }
     }
 
     private fun initialiseList() {
-        adapter = Adapter(this)
-        recyclerView = findViewById(R.id.recycler_view)
-        recyclerView.adapter = adapter
+        adapter = Adapter()
+        binding.recyclerView.adapter = adapter
     }
 }
