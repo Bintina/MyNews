@@ -63,4 +63,9 @@ dependencies {
     //lifecycle dependency
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.6.1'
 
+    //Fragments
+//Javalanguageimplementation
+    implementation("androidx.fragment:fragment:1.6.1")
+//Kotlin
+    implementation("androidx.fragment:fragment-ktx:1.6.1")
 }
