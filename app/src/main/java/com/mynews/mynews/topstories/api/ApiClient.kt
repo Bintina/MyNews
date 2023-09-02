@@ -5,6 +5,6 @@ import com.mynews.mynews.utils.Constants
 import retrofit2.http.GET
 
 interface ApiClient {
-    @GET(Constants.END_URL_KEY)
+    @GET(Constants.TOP_END_URL)
     suspend fun getNews(): NewsResponse
 }
