@@ -1,8 +1,8 @@
-package com.mynews.mynews.data
+package com.mynews.mynews.topstories.data
 
 import android.util.Log
-import com.mynews.mynews.adapter.Adapter
-import com.mynews.mynews.api.ApiService
+import com.mynews.mynews.topstories.adapter.Adapter
+import com.mynews.mynews.topstories.api.ApiService
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 

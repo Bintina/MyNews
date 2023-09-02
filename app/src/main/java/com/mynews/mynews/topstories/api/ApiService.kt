@@ -1,11 +1,8 @@
-package com.mynews.mynews.api
+package com.mynews.mynews.topstories.api
 
-import com.mynews.mynews.model.NewsResponse
-import com.mynews.mynews.utils.Constants
 import com.mynews.mynews.utils.Constants.BASE_URL
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.GET
 
 object ApiService {
     fun create(): ApiClient {

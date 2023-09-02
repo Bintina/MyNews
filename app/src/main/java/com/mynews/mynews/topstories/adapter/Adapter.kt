@@ -1,11 +1,11 @@
-package com.mynews.mynews.adapter
+package com.mynews.mynews.topstories.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.mynews.mynews.R
 import com.mynews.mynews.databinding.ItemRowBinding
-import com.mynews.mynews.model.News
+import com.mynews.mynews.topstories.model.News
 import com.squareup.picasso.Picasso
 
 class Adapter() : RecyclerView.Adapter<Adapter.ItemViewHolder>() {

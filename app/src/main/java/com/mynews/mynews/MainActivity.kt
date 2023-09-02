@@ -1,11 +1,10 @@
-package com.mynews.mynews.controller
+package com.mynews.mynews
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
-import androidx.recyclerview.widget.RecyclerView
-import com.mynews.mynews.adapter.Adapter
-import com.mynews.mynews.data.Datasource
+import com.mynews.mynews.topstories.adapter.Adapter
+import com.mynews.mynews.topstories.data.Datasource
 import com.mynews.mynews.databinding.ActivityMainBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -30,5 +29,5 @@ class MainActivity : AppCompatActivity() {
     private fun initialiseList() {
         adapter = Adapter()
         binding.recyclerView.adapter = adapter
-    }
 }
+    }
