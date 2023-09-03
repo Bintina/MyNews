@@ -31,6 +31,9 @@ class Adapter() : RecyclerView.Adapter<com.mynews.mynews.popular.adapter.Adapter
                 .placeholder(R.drawable.ic_android_black_24dp)
                 .into(view.newsImage)
 
+            //location holder
+            view.location.text = news?.subsection
+
             //date holder
             view.date.text = news?.published_date
 
