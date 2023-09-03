@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">My News</string>
+<<<<<<< Updated upstream
     <string name="popular_news">Popular News</string>
+=======
+    <string name="news">News</string>
+    <string name="top_stories_btn_title">Top Stories</string>
+    <string name="popular_news_btn_title">Popular News</string>
+    <string name="business_btn_title">Business</string>
+>>>>>>> Stashed changes
 </resources>

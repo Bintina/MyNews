@@ -29,6 +29,12 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+<<<<<<< Updated upstream
+=======
+    buildFeatures {
+        viewBinding true
+    }
+>>>>>>> Stashed changes
     namespace 'com.mynews.mynews'
 }
 
@@ -62,4 +68,15 @@ dependencies {
     //lifecycle dependency
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.6.1'
 
+<<<<<<< Updated upstream
+=======
+    //Fragments
+//Javalanguageimplementation
+    implementation("androidx.fragment:fragment:1.6.1")
+//Kotlin
+    implementation("androidx.fragment:fragment-ktx:1.6.1")
+
+    //Navigation Drawer
+    implementation("de.hdodenhof:circleimageview:3.1.0")
+>>>>>>> Stashed changes
 }
