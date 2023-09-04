@@ -19,4 +19,9 @@ object Constants {
     const val POP_END_URL = "viewed/1.json?api-key=zISBuhDClXAT0G1Lpmz0YnbaGfhPkGqf"
 //https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=zISBuhDClXAT0G1Lpmz0YnbaGfhPkGqf
 
+    // Business
+     //End Url: /world.json?api-key=yourkey
+    const val BUSINESS_END_URL = "business.json?api-key=zISBuhDClXAT0G1Lpmz0YnbaGfhPkGqf"
+    //https://api.nytimes.com/svc/topstories/v2/business.json?api-key=zISBuhDClXAT0G1Lpmz0YnbaGfhPkGqf
+
 }

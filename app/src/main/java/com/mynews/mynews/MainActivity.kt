@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.add
 import androidx.fragment.app.commit
 import androidx.lifecycle.lifecycleScope
+import com.mynews.mynews.business.controller.BusinessFragment
 import com.mynews.mynews.topstories.adapter.Adapter
 import com.mynews.mynews.topstories.data.Datasource
 import com.mynews.mynews.databinding.ActivityMainBinding
@@ -62,7 +63,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun navigateToBusiness() {
-        TODO("Not yet implemented")
+        supportFragmentManager.commit {
+            setReorderingAllowed(true)
+            add<BusinessFragment>(R.id.fragment_container_view)
+
+        }
     }
 
 

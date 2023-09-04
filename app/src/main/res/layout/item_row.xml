@@ -34,7 +34,7 @@
                 android:minWidth="100dp"
                 android:minHeight="100dp"
                 android:padding="10dp"
-                android:scaleType="fitCenter"
+                android:scaleType="centerInside"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/caption"
                 app:layout_constraintStart_toStartOf="parent"

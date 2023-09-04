@@ -26,8 +26,11 @@ class Adapter() : RecyclerView.Adapter<com.mynews.mynews.popular.adapter.Adapter
 
     class ItemViewHolder(private val view: ItemRowBinding) : RecyclerView.ViewHolder(view.root) {
         fun popularBind(news: PopularNews?) {
+
+            val imageUrl = news?.media?.first()?.media_metadata?.first()?.url
+println("imageUrl: $imageUrl")
             Picasso.with(view.newsImage.context)
-                .load(news?.media?.firstOrNull()?.media_metadata?.firstOrNull()?.url)
+                .load(imageUrl)
                 .placeholder(R.drawable.ic_android_black_24dp)
                 .into(view.newsImage)
 

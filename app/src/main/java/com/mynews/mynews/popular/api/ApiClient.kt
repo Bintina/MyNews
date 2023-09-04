@@ -6,5 +6,5 @@ import retrofit2.http.GET
 
 interface ApiClient {
     @GET(POP_END_URL)
-    suspend fun getPopularNews(): PopularNewsResult
+    suspend fun getPopularNews(): PopularNewsResult?
 }
