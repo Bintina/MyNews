@@ -9,7 +9,6 @@ import androidx.lifecycle.lifecycleScope
 import com.mynews.mynews.R
 import com.mynews.mynews.databinding.FragmentTopStoriesBinding
 import com.mynews.mynews.topstories.adapter.Adapter
-import com.mynews.mynews.topstories.data.Datasource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -31,7 +30,7 @@ class TopStoriesFragment : Fragment(R.layout.fragment_top_stories) {
         initializeList()
 
         lifecycleScope.launch(Dispatchers.IO) {
-            Datasource.loadNews(adapter)
+            com.mynews.mynews.data.DataSource.loadTopNews(adapter)
         }
 
         //inflate the layout for this fragment

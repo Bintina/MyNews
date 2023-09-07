@@ -9,7 +9,6 @@ import androidx.lifecycle.lifecycleScope
 import com.mynews.mynews.R
 import com.mynews.mynews.databinding.FragmentPopularBinding
 import com.mynews.mynews.popular.adapter.Adapter
-import com.mynews.mynews.popular.data.Datasource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -28,7 +27,7 @@ class PopularFragment: Fragment(R.layout.fragment_popular) {
         initializeList()
 
         lifecycleScope.launch(Dispatchers.IO) {
-            Datasource.loadPopularNews(adapter)
+            com.mynews.mynews.data.DataSource.loadPopularNews(adapter)
         }
         return binding.root
     }

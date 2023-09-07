@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import com.mynews.mynews.R
 import com.mynews.mynews.business.adapter.Adapter
-import com.mynews.mynews.business.data.Datasource
 import com.mynews.mynews.databinding.FragmentBusinessBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -28,7 +27,7 @@ class BusinessFragment: Fragment(R.layout.fragment_business) {
         initializeList()
 
         lifecycleScope.launch(Dispatchers.IO){
-            Datasource.loadBusinessNews(adapter)
+            com.mynews.mynews.data.DataSource.loadBusinessNews(adapter)
         }
         return binding.root
         println("FragmentBusiness Bound")

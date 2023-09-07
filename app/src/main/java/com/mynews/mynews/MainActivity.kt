@@ -7,15 +7,12 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.add
 import androidx.fragment.app.commit
-import androidx.lifecycle.lifecycleScope
 import com.mynews.mynews.business.controller.BusinessFragment
-import com.mynews.mynews.topstories.adapter.Adapter
-import com.mynews.mynews.topstories.data.Datasource
 import com.mynews.mynews.databinding.ActivityMainBinding
 import com.mynews.mynews.popular.controller.PopularFragment
 import com.mynews.mynews.topstories.controller.TopStoriesFragment
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
+
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -34,6 +31,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         val inflater: MenuInflater = menuInflater
         inflater.inflate(R.menu.menu, menu)
@@ -47,14 +45,17 @@ class MainActivity : AppCompatActivity() {
                 navigateToPopular()
                 true
             }
+
             R.id.business_btn -> {
                 navigateToBusiness()
                 true
             }
+
             R.id.top_stories_btn -> {
                 navigateToTop()
                 true
             }
+
             else -> super.onOptionsItemSelected(item)
         }
     }
