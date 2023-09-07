@@ -5,19 +5,24 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.mynews.mynews.R
 import com.mynews.mynews.databinding.ItemRowBinding
-import com.mynews.mynews.popular.model.PopularNews
-import com.mynews.mynews.topstories.adapter.Adapter
+import com.mynews.mynews.model.News
 import com.squareup.picasso.Picasso
 
 class Adapter() : RecyclerView.Adapter<com.mynews.mynews.popular.adapter.Adapter.ItemViewHolder>() {
 
-    var popularNewsList: List<PopularNews> = mutableListOf<PopularNews>()
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): com.mynews.mynews.popular.adapter.Adapter.ItemViewHolder {
+    var popularNewsList: List<News?> = mutableListOf<News>()
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): com.mynews.mynews.popular.adapter.Adapter.ItemViewHolder {
         val binding = ItemRowBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return com.mynews.mynews.popular.adapter.Adapter.ItemViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: com.mynews.mynews.popular.adapter.Adapter.ItemViewHolder, position: Int) {
+    override fun onBindViewHolder(
+        holder: com.mynews.mynews.popular.adapter.Adapter.ItemViewHolder,
+        position: Int
+    ) {
         holder.popularBind(popularNewsList[position])
     }
 
@@ -25,10 +30,10 @@ class Adapter() : RecyclerView.Adapter<com.mynews.mynews.popular.adapter.Adapter
     override fun getItemCount(): Int = popularNewsList.size
 
     class ItemViewHolder(private val view: ItemRowBinding) : RecyclerView.ViewHolder(view.root) {
-        fun popularBind(news: PopularNews?) {
+        fun popularBind(news: News?) {
 
-            val imageUrl = news?.media?.first()?.media_metadata?.first()?.url
-println("imageUrl: $imageUrl")
+            val imageUrl = news?.media?.first()?.mediaMetadata?.first()?.url
+            println("${news?.media}")
             Picasso.with(view.newsImage.context)
                 .load(imageUrl)
                 .placeholder(R.drawable.ic_android_black_24dp)
@@ -38,7 +43,7 @@ println("imageUrl: $imageUrl")
             view.location.text = news?.subsection
 
             //date holder
-            view.date.text = news?.published_date
+            view.date.text = news?.createdDate
 
             //caption holder
             view.caption.text = news?.abstract

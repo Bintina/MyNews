@@ -31,6 +31,7 @@ class BusinessFragment: Fragment(R.layout.fragment_business) {
             Datasource.loadBusinessNews(adapter)
         }
         return binding.root
+        println("FragmentBusiness Bound")
     }
 
     override fun onDestroyView() {

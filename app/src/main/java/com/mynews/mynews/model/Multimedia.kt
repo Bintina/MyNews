@@ -1,23 +1,23 @@
-package com.mynews.mynews.topstories.model
+package com.mynews.mynews.model
 
 
 import com.google.gson.annotations.SerializedName
 
 data class Multimedia(
     @SerializedName("caption")
-    val caption: String,
+    val caption: String?,
     @SerializedName("copyright")
-    val copyright: String,
+    val copyright: String?,
     @SerializedName("format")
-    val format: String,
+    val format: String?,
     @SerializedName("height")
-    val height: Int,
+    val height: Int?,
     @SerializedName("subtype")
-    val subtype: String,
+    val subtype: String?,
     @SerializedName("type")
-    val type: String,
+    val type: String?,
     @SerializedName("url")
-    val url: String,
+    val url: String?,
     @SerializedName("width")
-    val width: Int
+    val width: Int?
 )

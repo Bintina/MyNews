@@ -5,12 +5,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.mynews.mynews.R
 import com.mynews.mynews.databinding.ItemRowBinding
-import com.mynews.mynews.topstories.model.News
+import com.mynews.mynews.model.News
 import com.squareup.picasso.Picasso
 
 class Adapter() : RecyclerView.Adapter<Adapter.ItemViewHolder>() {
 
-    var newsList: List<News?> = mutableListOf<News>()
+    var newsList: List<News?> = mutableListOf<com.mynews.mynews.model.News>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
         val binding = ItemRowBinding.inflate(LayoutInflater.from(parent.context), parent, false)

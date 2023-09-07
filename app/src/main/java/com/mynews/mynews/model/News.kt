@@ -1,45 +1,47 @@
-package com.mynews.mynews.topstories.model
+package com.mynews.mynews.model
 
 
 import com.google.gson.annotations.SerializedName
 
 data class News(
     @SerializedName("abstract")
-    val `abstract`: String,
+    val `abstract`: String?,
     @SerializedName("byline")
-    val byline: String,
+    val byline: String?,
     @SerializedName("created_date")
-    val createdDate: String,
+    val createdDate: String?,
     @SerializedName("des_facet")
-    val desFacet: List<String>,
+    val desFacet: List<String?>?,
     @SerializedName("geo_facet")
-    val geoFacet: List<String>,
+    val geoFacet: List<String?>?,
     @SerializedName("item_type")
-    val itemType: String,
+    val itemType: String?,
     @SerializedName("kicker")
-    val kicker: String,
+    val kicker: String?,
     @SerializedName("material_type_facet")
-    val materialTypeFacet: String,
+    val materialTypeFacet: String?,
+    @SerializedName("media")
+    val media: List<Media?>?,
     @SerializedName("multimedia")
-    val multimedia: List<Multimedia>,
+    val multimedia: List<Multimedia?>?,
     @SerializedName("org_facet")
-    val orgFacet: List<String>,
+    val orgFacet: List<String?>?,
     @SerializedName("per_facet")
-    val perFacet: List<String>,
+    val perFacet: List<String?>?,
     @SerializedName("published_date")
-    val publishedDate: String,
+    val publishedDate: String?,
     @SerializedName("section")
-    val section: String,
+    val section: String?,
     @SerializedName("short_url")
-    val shortUrl: String,
+    val shortUrl: String?,
     @SerializedName("subsection")
-    val subsection: String,
+    val subsection: String?,
     @SerializedName("title")
-    val title: String,
+    val title: String?,
     @SerializedName("updated_date")
-    val updatedDate: String,
+    val updatedDate: String?,
     @SerializedName("uri")
-    val uri: String,
+    val uri: String?,
     @SerializedName("url")
-    val url: String
+    val url: String?
 )

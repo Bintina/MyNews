@@ -51,9 +51,23 @@ class MainActivity : AppCompatActivity() {
                 navigateToBusiness()
                 true
             }
+            R.id.top_stories_btn -> {
+                navigateToTop()
+                true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }
+
+    private fun navigateToTop() {
+        supportFragmentManager.commit {
+            setReorderingAllowed(true)
+            add<TopStoriesFragment>(R.id.fragment_container_view)
+
+        }
+
+    }
+
     private fun navigateToPopular() {
         supportFragmentManager.commit {
             setReorderingAllowed(true)
