@@ -3,26 +3,26 @@ package com.mynews.mynews.business.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.mynews.mynews.R
-import com.mynews.mynews.databinding.ItemRowBinding
 import com.mynews.mynews.model.News
 import com.squareup.picasso.Picasso
 
 class Adapter(): RecyclerView.Adapter<Adapter.ItemViewHolder>() {
 
-    var businessNewsList: List<News> = mutableListOf<News>()
+    var newsList: List<News?> = mutableListOf<News>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): com.mynews.mynews.business.adapter.Adapter.ItemViewHolder {
-        val binding = ItemRowBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return ItemViewHolder(binding)
+        val binding = com.mynews.mynews.databinding.ItemRowBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return com.mynews.mynews.business.adapter.Adapter.ItemViewHolder(binding)
     }
 
-    override fun getItemCount(): Int = businessNewsList.size
+    override fun getItemCount(): Int = newsList.size
 
     override fun onBindViewHolder(holder: com.mynews.mynews.business.adapter.Adapter.ItemViewHolder, position: Int) {
-        holder.businessBind(businessNewsList[position])
+        holder.businessBind(newsList[position])
     }
-    class ItemViewHolder(private val view: com.mynews.mynews.databinding.ItemRowBinding): RecyclerView.ViewHolder(view.root){
+    class ItemViewHolder(private val view: com.mynews.mynews.databinding.ItemRowBinding): androidx.recyclerview.widget.RecyclerView.ViewHolder(view.root){
         fun businessBind(news: News?) {
             //Image holder
             Picasso.with(view.newsImage.context)

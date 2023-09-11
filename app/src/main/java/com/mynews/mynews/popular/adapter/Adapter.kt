@@ -10,7 +10,7 @@ import com.squareup.picasso.Picasso
 
 class Adapter() : RecyclerView.Adapter<com.mynews.mynews.popular.adapter.Adapter.ItemViewHolder>() {
 
-    var popularNewsList: List<News?> = mutableListOf<News>()
+    var newsList    : List<News?> = mutableListOf<News>()
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -23,19 +23,17 @@ class Adapter() : RecyclerView.Adapter<com.mynews.mynews.popular.adapter.Adapter
         holder: com.mynews.mynews.popular.adapter.Adapter.ItemViewHolder,
         position: Int
     ) {
-        holder.popularBind(popularNewsList[position])
+        holder.popularBind(newsList[position])
     }
 
 
-    override fun getItemCount(): Int = popularNewsList.size
+    override fun getItemCount(): Int = newsList.size
 
     class ItemViewHolder(private val view: ItemRowBinding) : RecyclerView.ViewHolder(view.root) {
-        fun popularBind(news: News?) {
-
-            val imageUrl = news?.media?.first()?.mediaMetadata?.first()?.url
-            println("${news?.media}")
+    fun popularBind(news: News?) {
+            //Image holder
             Picasso.with(view.newsImage.context)
-                .load(imageUrl)
+                .load(news?.media?.first()?.mediaMetadata?.first()?.url)
                 .placeholder(R.drawable.ic_android_black_24dp)
                 .into(view.newsImage)
 

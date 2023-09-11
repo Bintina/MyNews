@@ -2,7 +2,6 @@ package com.mynews.mynews.data
 
 import android.util.Log
 import com.mynews.mynews.model.News
-import com.mynews.mynews.topstories.adapter.Adapter
 import com.mynews.mynews.topstories.api.ApiService
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -41,7 +40,7 @@ object DataSource {
         response?.let {
             withContext(Dispatchers.Main) {
                 println("Data is ${it.numResults}")
-                adapter.popularNewsList = it.results
+                adapter.newsList = it.results
                 adapter.notifyDataSetChanged()
             }
         }
@@ -59,7 +58,7 @@ object DataSource {
         response?.let {
             withContext(Dispatchers.Main) {
                 println("Data is ${it.numResults}")
-                adapter.businessNewsList = it.results as List<News>
+                adapter.newsList = it.results as List<News>
                 adapter.notifyDataSetChanged()
             }
         }
