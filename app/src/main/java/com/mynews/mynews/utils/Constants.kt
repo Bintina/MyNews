@@ -1,17 +1,27 @@
 package com.mynews.mynews.utils
 
 object Constants {
-
-    //New York Times Top Stories base Url
-    val BASE_URL = "https://api.nytimes.com/svc/topstories/v2/"
-
-    //End Url
-    const val END_URL = "world.json?"
+    //New York Times
 
     //unattached key
     const val API_KEY = "api-key=zISBuhDClXAT0G1Lpmz0YnbaGfhPkGqf"
 
+    // Top Stories
+    // base Url
+    val TOP_BASE_URL = "https://api.nytimes.com/svc/topstories/v2/"
     //End Url: /world.json?api-key=yourkey
-    const val END_URL_KEY = "world.json?api-key=zISBuhDClXAT0G1Lpmz0YnbaGfhPkGqf"
+    const val TOP_END_URL = "world.json?api-key=zISBuhDClXAT0G1Lpmz0YnbaGfhPkGqf"
+
+    //Popular Stories
+    //base URL
+    val POP_BASE_URL = "https://api.nytimes.com/svc/mostpopular/v2/"
+    //End Url
+    const val POP_END_URL = "viewed/1.json?api-key=zISBuhDClXAT0G1Lpmz0YnbaGfhPkGqf"
+//https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=zISBuhDClXAT0G1Lpmz0YnbaGfhPkGqf
+
+    // Business
+     //End Url: /world.json?api-key=yourkey
+    const val BUSINESS_END_URL = "business.json?api-key=zISBuhDClXAT0G1Lpmz0YnbaGfhPkGqf"
+    //https://api.nytimes.com/svc/topstories/v2/business.json?api-key=zISBuhDClXAT0G1Lpmz0YnbaGfhPkGqf
 
 }

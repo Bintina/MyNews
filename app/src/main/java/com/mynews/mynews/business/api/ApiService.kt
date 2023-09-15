@@ -1,15 +1,15 @@
-package com.mynews.mynews.api
+package com.mynews.mynews.business.api
 
-import com.mynews.mynews.utils.Constants.BASE_URL
+import com.mynews.mynews.utils.Constants.TOP_BASE_URL
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.create
 
 object ApiService {
-    fun create(): ApiClient {
+    fun createBusiness(): ApiClient {
         val retrofit = Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl(BASE_URL)
+            .baseUrl(TOP_BASE_URL)
             .build()
         return retrofit.create(ApiClient::class.java)
     }
