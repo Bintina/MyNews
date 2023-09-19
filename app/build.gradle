@@ -49,7 +49,6 @@ dependencies {
     implementation'com.github.bumptech.glide:glide:4.15.1'
 
     //Image dependencies
-    implementation 'com.github.bumptech.glide:glide:3.7.0'
     implementation 'com.squareup.picasso:picasso:2.4.0'
 
     //coroutine dependencies
@@ -58,6 +57,6 @@ dependencies {
     //comes with the core functions that the language provides
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
     //lifecycle dependency
-    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.6.1'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.6.2'
 
 }
